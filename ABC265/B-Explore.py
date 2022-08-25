@@ -1,19 +1,22 @@
 room_num, bonus_room_num, time = map(int, input().split())
 move_cost_lst = list(map(int, input().split()))
-bonus_room_dict = dict([tuple(map(int, input().split())) for _ in range(bonus_room_num)])
+bonus = [0] * room_num
 
-counter = 1
+for _ in range(bonus_room_num):
+    i, bonus_time = map(int, input().split())
+    bonus[i - 1] = bonus_time
+
+
 flag = True
 for i in range(room_num - 1):
-    counter += 1
-    time -= move_cost_lst[i]
-    if time <= 0:
+    if time <= move_cost_lst[i]:
         flag = False
         break
-    if counter in bonus_room_dict:
-        time += bonus_room_dict[counter]
+    time -= move_cost_lst[i]
+    time += bonus[i + 1]
+    
 
 if flag:
-	print("Yes")
+    print("Yes")
 else:
-	print("No")
+    print("No")

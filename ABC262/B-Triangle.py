@@ -10,10 +10,10 @@ for i in range(edge_num):
 count = 0
 lst = [i for i in range(1, vertex + 1)]
 for i, j, k in itertools.combinations(lst, 3):
-	i -= 1
-	j -= 1
-	k -= 1
-	if adj[i][j] and adj[i][k] and adj[k][j]:
-    	 count += 1
+    i -= 1
+    j -= 1
+    k -= 1
+    if adj[i][j] and adj[i][k] and adj[k][j]:
+        count += 1
 
 print(count)

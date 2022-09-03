@@ -1,6 +1,5 @@
 # AtCoderProblem
 
----
 
 AtCoderProblemの答案置き場。
 
